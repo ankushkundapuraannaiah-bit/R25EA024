@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ankush Kundapura Annaiah | R25EA024 Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0f1d;
+      --bg-secondary: #11192e;
+      --bg-card: #16203a;
+      --bg-card-hover: #1c2a4d;
+      --accent: #38bdf8;
+      --accent-gradient: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: rgba(148, 163, 184, 0.15);
+      --border-highlight: rgba(56, 189, 248, 0.4);
+      --shadow: 0 10px 30px -10px rgba(2, 6, 23, 0.7);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 15, 29, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 2rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .badge-roll {
+      background: var(--accent-gradient);
+      color: #ffffff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      letter-spacing: 0.05em;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--accent);
+    }
+
+    .btn-github {
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--accent);
+      border: 1px solid var(--border-highlight);
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-github:hover {
+      background: var(--accent);
+      color: #0b1120;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 4rem 0 5rem;
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(99, 102, 241, 0.12);
+      color: #a5b4fc;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 0.35rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: 3.25rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      background: linear-gradient(180deg, #ffffff 40%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 2.25rem;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent-gradient);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 0.8rem 1.8rem;
+      border-radius: 10px;
+      font-weight: 600;
+      box-shadow: 0 4px 20px rgba(56, 189, 248, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(56, 189, 248, 0.4);
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--text-main);
+      text-decoration: none;
+      padding: 0.8rem 1.8rem;
+      border-radius: 10px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 4rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 2.75rem;
+      text-align: center;
+    }
+
+    .section-tag {
+      text-transform: uppercase;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* Projects Section Grid */
+    #projects .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--accent-gradient);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      background: var(--bg-card-hover);
+      border-color: var(--border-highlight);
+      box-shadow: var(--shadow);
+    }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-category {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      display: block;
+      letter-spacing: 0.05em;
+    }
+
+    .project-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.85rem;
+      line-height: 1.3;
+    }
+
+    .project-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .tech-tag {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      color: #cbd5e1;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .project-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .project-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* About Section */
+    .about-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .about-text p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 0.92rem;
+    }
+
+    .info-label {
+      color: var(--text-muted);
+    }
+
+    .info-value {
+      color: var(--text-main);
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-category {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+    }
+
+    .skill-category h4 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+
+    .skill-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skill-badge {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      color: var(--text-main);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 2rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+      .about-card {
+        grid-template-columns: 1fr;
+      }
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <span>Ankush K. A.</span>
+        <span class="badge-roll">R25EA024</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://github.com/ankushkundapuraannaiah-bit/R25EA024" target="_blank" class="btn-github">Repository</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-badge">
+        <span>⚡ Software Engineer & Developer</span>
+      </div>
+      <h1>Building Modern Web Apps & Intelligent Systems</h1>
+      <p>
+        Hi, I'm <strong>Ankush Kundapura Annaiah</strong> (Roll No: <code>R25EA024</code>). Welcome to my official portfolio showcasing my latest engineering projects, web applications, and technical experiments.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">Explore Projects</a>
+        <a href="https://github.com/ankushkundapuraannaiah-bit" target="_blank" class="btn-secondary">GitHub Profile</a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="section-header">
+        <span class="section-tag">Overview</span>
+        <h2 class="section-title">About Me</h2>
+      </div>
+      <div class="about-card">
+        <div class="about-text">
+          <h3>Driven by clean code & scalable design</h3>
+          <p>
+            I am a software developer with hands-on experience spanning full-stack development, modern web applications, AI-assisted workflows, and privacy-focused systems.
+          </p>
+          <p>
+            This repository and website document my structured development journey, version control milestones, and verified project accomplishments.
+          </p>
+        </div>
+        <ul class="info-list">
+          <li class="info-item">
+            <span class="info-label">Full Name</span>
+            <span class="info-value">Ankush Kundapura Annaiah</span>
+          </li>
+          <li class="info-item">
+            <span class="info-label">Roll / USN</span>
+            <span class="info-value">R25EA024</span>
+          </li>
+          <li class="info-item">
+            <span class="info-label">Institution</span>
+            <span class="info-value">BIT (Bangalore Inst. of Tech)</span>
+          </li>
+          <li class="info-item">
+            <span class="info-label">Status</span>
+            <span class="info-value">Active Developer</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="section-header">
+        <span class="section-tag">Work & Case Studies</span>
+        <h2 class="section-title">Featured Projects</h2>
+      </div>
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <article class="project-card">
+          <div>
+            <span class="project-category">Full-Stack Web App</span>
+            <h3 class="project-title">IPL Ticket Booking Platform</h3>
+            <p class="project-desc">
+              A comprehensive live web application allowing users to browse IPL match fixtures, check ticket prices, select stadium seats in real-time, and securely manage booking reservations.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Supabase</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ankushkundapuraannaiah-bit/ipl2026" target="_blank" class="project-link">
+              View Repository &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <div>
+            <span class="project-category">AI / Enterprise System</span>
+            <h3 class="project-title">NexusRAG Platform</h3>
+            <p class="project-desc">
+              An enterprise-grade Retrieval-Augmented Generation platform combining dense FAISS cosine similarity and sparse BM25 lexical search with LangGraph multi-step reasoning and hallucination guardrails.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">LangGraph</span>
+              <span class="tech-tag">FAISS</span>
+              <span class="tech-tag">Streamlit</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ankushkundapuraannaiah-bit" target="_blank" class="project-link">
+              Architecture & Details &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <div>
+            <span class="project-category">Security & Web3</span>
+            <h3 class="project-title">Eyentra Media Sharing</h3>
+            <p class="project-desc">
+              A privacy-first encrypted media sharing ecosystem engineered with peer-to-peer data transfers, decentralized permissions, and client-side encryption for secure multimedia dissemination.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">WebRTC</span>
+              <span class="tech-tag">Cryptography</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ankushkundapuraannaiah-bit/Eyentra" target="_blank" class="project-link">
+              View Repository &rarr;
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card">
+          <div>
+            <span class="project-category">Machine Learning</span>
+            <h3 class="project-title">Intelligent Resume Analyzer</h3>
+            <p class="project-desc">
+              Automated NLP-driven resume evaluation tool calculating candidate-job description compatibility scores, identifying missing core competencies, and recommending career development trajectories.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">NLP</span>
+              <span class="tech-tag">Streamlit</span>
+              <span class="tech-tag">Scikit-Learn</span>
+            </div>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/ankushkundapuraannaiah-bit/intelligent_resume_analyzer_hidevs" target="_blank" class="project-link">
+              View Repository &rarr;
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="section-header">
+        <span class="section-tag">Competencies</span>
+        <h2 class="section-title">Technical Skills</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h4>Frontend Development</h4>
+          <div class="skill-badges">
+            <span class="skill-badge">HTML5</span>
+            <span class="skill-badge">CSS3</span>
+            <span class="skill-badge">JavaScript (ES6+)</span>
+            <span class="skill-badge">React</span>
+            <span class="skill-badge">Responsive Design</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Backend & Storage</h4>
+          <div class="skill-badges">
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">Node.js</span>
+            <span class="skill-badge">FastAPI</span>
+            <span class="skill-badge">Supabase</span>
+            <span class="skill-badge">PostgreSQL</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h4>Tools & Workflows</h4>
+          <div class="skill-badges">
+            <span class="skill-badge">Git & GitHub</span>
+            <span class="skill-badge">GitHub Pages</span>
+            <span class="skill-badge">VS Code</span>
+            <span class="skill-badge">Docker</span>
+            <span class="skill-badge">REST APIs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="section-header">
+        <span class="section-tag">Connect</span>
+        <h2 class="section-title">Get in Touch</h2>
+      </div>
+      <div class="about-card" style="text-align: center; display: block;">
+        <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+          Looking to collaborate on projects or discuss software engineering opportunities? Connect with me on GitHub!
+        </p>
+        <a href="https://github.com/ankushkundapuraannaiah-bit" target="_blank" class="btn-primary" style="display: inline-block;">
+          Visit @ankushkundapuraannaiah-bit on GitHub
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Ankush Kundapura Annaiah &bull; Roll No: <strong>R25EA024</strong> &bull; Deployed via <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></p>
+  </footer>
+
+</body>
+</html>
